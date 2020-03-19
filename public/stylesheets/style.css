@@ -1,13 +1,10 @@
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 .container {
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-top: 5%;
 }
 
 form.signup,
