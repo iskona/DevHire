@@ -1,0 +1,51 @@
+html,
+body {
+    height: 100%;
+}
+
+.container {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form.signup,
+form.login {
+  margin-top: 10px;
+}
+
+.navbar {
+  background-color: #072443;
+  border: 0;
+  border-radius: 0;
+}
+
+.navbar-brand {
+  margin-left: 10%;
+  font-family: 'Monoton', cursive;
+}
+
+.navbar a {
+  margin-right: 10%;
+}
+
+.btn {
+  background-color: #ff5500;
+  border: none;
+  margin-right: 3%;
+  font-family: 'Raleway', cursive;
+}
+
+h2 {
+  font-family: 'Alfa Slab One', cursive;
+  margin-bottom: 5%;
+}
+
+a {
+  color: #ff5500;
+}
+
+.logout {
+  font-family: 'Alfa Slab One';
+}
