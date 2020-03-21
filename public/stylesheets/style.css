@@ -42,3 +42,10 @@ h2 {
 a {
   color: #ff5500;
 }
+#add-btn {
+  background-color:#8c8c8c;
+  color: black;
+}
+.skill-btn{
+  background-color:#8c8c8c;
+}
