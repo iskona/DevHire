@@ -32,9 +32,6 @@ $(document).ready(function () {
         if (data.role === "client") {
           window.location.replace("/clientProfile");
         } else if (data.role === "developer") {
-        }
-        else
-        {
           window.location.replace("/developer");
         }
         // If there's an error, log the error
