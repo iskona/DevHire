@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "example",
-    "database": "passport_demo",
+    "password": "Nani_0108$",
+    "database": "devhire_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

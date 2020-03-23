@@ -27,7 +27,7 @@ form.login {
   margin-right: 10%;
 }
 
-.btn {
+.btn {letter-spacing: normal;
   background-color: #ff5500;
   border: none;
   margin-right: 3%;

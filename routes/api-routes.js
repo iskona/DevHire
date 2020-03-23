@@ -52,4 +52,47 @@ module.exports = function(app) {
       });
     }
   });
+
+  //Route for saving developer profile to Database developers
+  // app.post("api/developer", function(req, res) {
+  //   console.log("++++++++++++++++ request received ++++++++++++++++++++++");
+
+  // db.Developer.create({
+  //   fullName: req.body.fullName,
+  //   email: req.body.email,
+  //   contact: req.body.contact,
+  //   skills: req.body.skills,
+  //   experience: req.body.experience,
+  //   portfolioLink: req.body.portfolioLink,
+  //   pastProjects: req.body.pastProjects,
+  //   activeProjects: req.body.activeProjects
+  // })
+  //   .then(function() {
+  //     res.send("Data entered ");
+  //   })
+  //   .catch(function(err) {
+  //     res.status(401).json(err);
+  //   });
+  //   console.log(req);
+
+  //   res.send("Welcome buddy");
+  // });
+  app.post("/api/developer", function(req, res) {
+    db.Developer.create({
+      fullName: req.body.fullName,
+      email: req.body.email,
+      contact: req.body.contact,
+      skills: req.body.skills,
+      experience: req.body.experience,
+      portfolioLink: req.body.portfolioLink,
+      pastProjects: req.body.pastProjects,
+      activeProjects: req.body.activeProjects
+    })
+      .then(function() {
+        res.redirect(307, "/api/login");
+      })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
+  });
 };
