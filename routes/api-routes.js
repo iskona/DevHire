@@ -7,9 +7,21 @@ module.exports = function(app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    db.User.findOne({
+      where: {
+        email: req.body.email
+      }
+    })
+      .then(function(data) {
+        console.log(data.role);
+      })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
+      role: req.user.role,
       id: req.user.id
     });
   });
