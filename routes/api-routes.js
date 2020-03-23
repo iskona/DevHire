@@ -54,29 +54,6 @@ module.exports = function(app) {
   });
 
   //Route for saving developer profile to Database developers
-  // app.post("api/developer", function(req, res) {
-  //   console.log("++++++++++++++++ request received ++++++++++++++++++++++");
-
-  // db.Developer.create({
-  //   fullName: req.body.fullName,
-  //   email: req.body.email,
-  //   contact: req.body.contact,
-  //   skills: req.body.skills,
-  //   experience: req.body.experience,
-  //   portfolioLink: req.body.portfolioLink,
-  //   pastProjects: req.body.pastProjects,
-  //   activeProjects: req.body.activeProjects
-  // })
-  //   .then(function() {
-  //     res.send("Data entered ");
-  //   })
-  //   .catch(function(err) {
-  //     res.status(401).json(err);
-  //   });
-  //   console.log(req);
-
-  //   res.send("Welcome buddy");
-  // });
   app.post("/api/developer", function(req, res) {
     db.Developer.create({
       fullName: req.body.fullName,
@@ -88,11 +65,36 @@ module.exports = function(app) {
       pastProjects: req.body.pastProjects,
       activeProjects: req.body.activeProjects
     })
-      .then(function() {
-        res.redirect(307, "/api/login");
+      .then(function(dbDeveloper) {
+        res.json(dbDeveloper);
+        console.log(dbDeveloper);
       })
       .catch(function(err) {
         res.status(401).json(err);
       });
+  });
+  //route to get developer data based on email id
+  app.get("/api/developer_data/:email", function(req, res) {
+    // Here we add an "include" property to our options in our findOne query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Post
+    db.Developer.findOne({
+      where: {
+        email: req.params.email
+      }
+    }).then(function(dbDeveloper) {
+      res.json(dbDeveloper);
+    });
+  });
+
+  //route to update developer's profile
+  app.put("/api/updateProfile", function(req, res) {
+    db.Developer.update(req.body, {
+      where: {
+        email: req.body.email
+      }
+    }).then(function(dbData) {
+      res.json(dbData);
+    });
   });
 };

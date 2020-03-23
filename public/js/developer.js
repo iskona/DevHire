@@ -1,5 +1,11 @@
 /* eslint-disable prettier/prettier */
 $(document).ready(function() {
+  //get the user's email id to auto populate in the email field.
+  // This file just does a GET request to figure out which user is logged in
+  // and updates the HTML on the page
+  $.get("/api/user_data").then(function(data) {
+    $("#email-id").val(data.email);
+  });
   var skills = [];
   function createSkillButtons() {
     var skill = $("#skill-name")
@@ -43,26 +49,6 @@ $(document).ready(function() {
     saveToPortfolio(developerData);
   });
   function saveToPortfolio(details){
-    console.log("--------");
-    
-    console.log(details);
-    // $.post("api/developer",{
-    //   fullName: details.fullName,
-    //   email: details.email,
-    //   contact : details.contact,
-    //   skills : details.skills,
-    //   experience : details.experience,
-    //   portfolioLink : details.portfolioLink,
-    //   pastProjects : details.pastProjects,
-    //   activeProjects : details.activeProjects
-    // })
-    //   .then(function(){
-    //     window.location.replace("/signup");
-    //   })
-    //   .catch(console.log("error handler"));
-    // var email= "madhu@chittella.com";
-    // var password = "testing";
-    // var role = "engineer";
     $.post("/api/developer", {
       fullName: details.fullName,
       email: details.email,
@@ -73,14 +59,8 @@ $(document).ready(function() {
       pastProjects : details.pastProjects,
       activeProjects : details.activeProjects
     })
-      .then(function (data) {
-        console.log(data);
-        if ($("select option:selected").attr("class") === "client") {
-          window.location.replace("/client");
-        }
-        else if ($("select option:selected").attr("class") === "developer") {
-          window.location.replace("/developer");
-        }
+      .then(function () {
+        window.location.replace("/developerProfile");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
