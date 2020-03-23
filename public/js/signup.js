@@ -8,7 +8,6 @@ $(document).ready(function () {
   signUpForm.on("submit", function (event) {
     event.preventDefault();
     var roleInput = $("select option:selected").attr("class");
-    console.log(roleInput);
     
     var userData = {
       email: emailInput.val().trim(),

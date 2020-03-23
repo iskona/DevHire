@@ -7,9 +7,21 @@ module.exports = function(app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    db.User.findOne({
+      where: {
+        email: req.body.email
+      }
+    })
+      .then(function(data) {
+        console.log(data.role);
+      })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
+      role: req.user.role,
       id: req.user.id
     });
   });
@@ -96,5 +108,41 @@ module.exports = function(app) {
     }).then(function(dbData) {
       res.json(dbData);
     });
+  });
+  /*Create a new client */
+  app.post("/api/client", function(req, res) {
+    console.log(req.body);
+    db.Client.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      contact: req.body.contact,
+      company: req.body.company,
+      description: req.body.description
+    })
+      .then(function(results) {
+        // We have access to the new todo as an argument inside of the callback function
+        res.json(results);
+      })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
+  });
+
+  /*Get client information*/
+  app.get("/api/client", function(req, res) {
+    // not logged in
+    // unauthorised error.
+    // loged in
+    var emailid = req.user.email;
+    console.log(emailid);
+    db.Client.findOne({
+      where: {
+        email: emailid
+      }
+    }).then(function(results) {
+      res.json(results);
+    });
+    /// get the data
   });
 };
