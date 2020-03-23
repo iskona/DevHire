@@ -30,7 +30,7 @@ $(document).ready(function () {
     })
       .then(function(data) {
         if (data.role === "client") {
-          window.location.replace("/client");
+          window.location.replace("/clientProfile");
         } else if (data.role === "developer") {
           window.location.replace("/developer");
         }

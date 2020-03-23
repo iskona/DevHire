@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "example",
+    "password": "Deepshikha",
     "database": "DevHire_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
