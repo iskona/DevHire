@@ -46,4 +46,8 @@ module.exports = function(app) {
   app.get("/developer", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/developer.html"));
   });
+
+  app.get("/developerProfile", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/developerProfile.html"));
+  });
 };
