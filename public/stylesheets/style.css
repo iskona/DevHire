@@ -49,3 +49,6 @@ a {
 .skill-btn{
   background-color:#8c8c8c;
 }
+.required {
+  color: red;
+}
