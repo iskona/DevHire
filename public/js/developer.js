@@ -5,6 +5,7 @@ $(document).ready(function() {
   // and updates the HTML on the page
   $.get("/api/user_data").then(function(data) {
     $("#email-id").val(data.email);
+    $("#email-id").attr("disabled","true");
   });
   var skills = [];
   function createSkillButtons() {

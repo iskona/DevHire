@@ -32,10 +32,10 @@
 
     <div class="container bg-light p-3 mt-3">
       <div class="row ">
-        <div class="col-3">
-          <p>Full Name:</p>
+        <div class="col-sm-12 col-md-3">
+          <p>Full Name:<span class="required">*</span></p>
         </div>
-        <div class="col-8 ">
+        <div class="col-sm-12 col-md-8">
           <form>
             <div class="form-row">
               <div class="col">
@@ -49,18 +49,18 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-3">
+        <div class="col-sm-12 col-md-3">
           <p>Email:</p>
         </div>
-        <div class="col-3">
+        <div class="col-sm-12 col-md-3">
           <input type="email" class="form-control" id="email-id" placeholder="email@example.com">
         </div>
       </div>
       <div class="row">
-        <div class="col-3">
+        <div class="col-sm-12 col-md-3">
           <p>Contact#:</p>
         </div>
-        <div class="col-2">
+        <div class="col-sm-12 col-md-2">
           <input type="text" class="form-control" id="contact" placeholder="#">
         </div>
       </div>
@@ -71,11 +71,11 @@
     </header>
 
     <div class="container bg-light p-3 mt-3">
-      <div class="row ">
+      <div class="row">
         <div class="col-3 mt-2">
-          <p>Skills:</p>
+          <p>Skills:<span class="required">*</span></p>
         </div>
-        <div class="col-3" id="skill-button-group">
+        <div class="col-sm-12 col-md-3" id="skill-button-group">
           <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Enter your skill" id="skill-name">
             <div class="input-group-append">
@@ -84,20 +84,20 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-3">
-          <p>Experience:</p>
+      <div class="row mb-2">
+        <div class="col-sm-12 col-md-3">
+          <p>Experience:<span class="required">*</span></p>
         </div>
-        <div class="col-2">
+        <div class="col-sm-12 col-md-2">
           <input type="text" class="form-control" id="experience" placeholder="in years">
         </div>
       </div>
       <div class="row">
-        <div class="col-3">
+        <div class="col-sm-12 col-md-3">
           <p>Link to Portfolio:</p>
         </div>
-        <div class="col-6">
-          <input type="text" class="form-control" id="portfolio-link" placeholder="in years">
+        <div class="col-sm-12 col-md-6">
+          <input type="text" class="form-control" id="portfolio-link">
         </div>
       </div>
 
@@ -107,7 +107,7 @@
       <div class="col text-center">
           <!-- <button class="m-3 p-2 btn" id="saveBtn">Save to Profile</button> -->
           <form action="profile.html" method="get">
-            <button class="m-3 p-2 btn" id="saveBtn">Save to Profile</button>
+            <button class="m-3 p-2 btn styleBTN text-white px-3" id="saveBtn">Save to Profile</button>
          </form>
       </div>
   </div>
