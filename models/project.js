@@ -20,7 +20,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     status: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue: "open"
     },
     skills: {
       type: DataTypes.STRING,
