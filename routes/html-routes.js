@@ -6,52 +6,37 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
   app.get("/", function(req, res) {
-    // If the user already has an account send them to the members page
-    // console.log(req.user);
-    // if (req.user) {
-    //   res.redirect("/developer");
-    // }
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.render("index");
   });
 
   app.get("/signup", function(req, res) {
-    // If the user already has an account send them to the members page
-    // console.log(req.user);
-    // if (req.user) {
-    //   res.redirect("/developer");
-    // }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.render("signup");
   });
 
   app.get("/login", function(req, res) {
-    // If the user already has an account send them to the members page
-    // console.log(req.user);
-    // if (req.user) {
-    //   res.redirect("/developer");
-    // }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("login");
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
 
-  app.get("/client", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/clientForm.html"));
+  app.get("/client", isAuthenticated, function(req, res) {
+    res.render("clientForm");
   });
 
-  app.get("/clientProfile", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/clientProfile.html"));
+  app.get("/clientProfile", isAuthenticated, function(req, res) {
+    res.render("clientProfile");
   });
 
   app.get("/developer", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/developer.html"));
+    res.render("developer");
   });
 
-  app.get("/developerProfile", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/developerProfile.html"));
+  app.get("/developerProfile", isAuthenticated, function(req, res) {
+    res.render("developerProfile");
   });
   //testing for chat functionality
-  app.get("/chat", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/chat.html"));
-  });
+  // app.get("/chat", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/chat.html"));
+  // });
 };
