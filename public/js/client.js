@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     var clientFname = $("#clientFname");
     var clientLname = $("#clientLname");
     var clientEmail = $("#clientEmail");
@@ -8,6 +7,12 @@ $(document).ready(function () {
     var clientDesc = $("#clientDesc");
     var clientSave = $("#clientSave");
     var signUpForm = $("form.signup-form");
+
+    $.get("/api/user_data").then(function(data) {
+        console.log(data);
+        clientEmail.val(data.email);
+        clientEmail.attr("disabled","true");
+      });
 
     // When the form is submitted, we validate there's an email and password entered
     signUpForm.on("submit", function (event) {
@@ -37,33 +42,4 @@ $(document).ready(function () {
             });
     }
 });
-
-// to Load profile page on load 
-$(window).on("load", function () {
-    displayClient()
-});
-
-function displayClient() {
-    $.get("/api/client")
-        .then(function (data) {
-            $(".member-name").text(data.firstName);
-            $("#clientProfileContainer").append(
-                `  <div class="card">
-            <div class="row">
-                <div class=" col-md-8 pl-3 m-5 " id="content">
-                <h4>Personal Details :</h4>
-                <br>
-                    <p><b>FirstName :</b>  ${data.firstName}</p>
-                    <p><b>LastName : </b>  ${data.lastName}</p>
-                    <p><b>Email_ID : </b>  ${data.email}</p>
-                    <p><b>Contact-No: </b> ${data.contact}</p>
-                    <p></b>Company.:  </b>   ${data.company}</p>
-                    <p><b>Description: </b>${data.description}</p>
-                </div>
-            </div>
-        </div>`
-            )
-        })
-}
-
 
