@@ -1,18 +1,6 @@
 // Creating our Developer model
 module.exports = function(sequelize, DataTypes) {
   var Developer = sequelize.define("Developer", {
-    //
-    /**
-     * needed columns for developer table are
-     * full name
-     * email
-     * contact number
-     * skills
-     * experience
-     * portfolio link
-     * past projects
-     * active projects
-     */
     fullName: {
       type: DataTypes.STRING,
       allowNull: false
@@ -44,6 +32,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     activeProjects: {
       type: DataTypes.INTEGER
+    },
+    status: {
+      type: DataTypes.STRING,
+      defaultValue: "available"
     }
   });
 

@@ -87,9 +87,6 @@ module.exports = function(app) {
   });
   //route to get developer data based on email id
   app.get("/api/developer_data/:email", function(req, res) {
-    // Here we add an "include" property to our options in our findOne query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Post
     db.Developer.findOne({
       where: {
         email: req.params.email
@@ -131,9 +128,6 @@ module.exports = function(app) {
 
   /*Get client information*/
   app.get("/api/client", function(req, res) {
-    // not logged in
-    // unauthorised error.
-    // loged in
     var emailid = req.user.email;
     console.log(emailid);
     db.Client.findOne({
@@ -143,6 +137,85 @@ module.exports = function(app) {
     }).then(function(results) {
       res.json(results);
     });
-    /// get the data
+  });
+
+  //get projects data from projects table with developer's email id and status="assigned"
+  app.get("/api/assignedProjects/:email", function(req, res) {
+    db.Project.findAll({
+      where: {
+        developerEmail: req.params.email,
+        status: "assigned"
+      }
+    }).then(function(dbDeveloper) {
+      res.json(dbDeveloper);
+    });
+  });
+  //get projects data from projects table with developer's email id and status= "open"
+  app.get("/api/openProjects/:email", function(req, res) {
+    db.Project.findAll({
+      where: {
+        developerEmail: req.params.email,
+        status: "open"
+      }
+    }).then(function(dbDeveloper) {
+      console.log(dbDeveloper);
+
+      res.json(dbDeveloper);
+    });
+  });
+
+  //route to update project's status column to "done"
+  app.put("/api/updateDone", function(req, res) {
+    db.Project.update(
+      { status: req.body.status },
+      {
+        where: {
+          id: req.body.id
+        }
+      }
+    ).then(function(dbData) {
+      res.json(dbData);
+    });
+  });
+
+  //route to update project's status column to "assigned"
+  app.put("/api/updateAssigned", function(req, res) {
+    db.Project.update(
+      { status: req.body.status },
+      {
+        where: {
+          id: req.body.id
+        }
+      }
+    ).then(function(dbData) {
+      res.json(dbData);
+    });
+  });
+
+  //route to update project's status column to "assigned"
+  app.put("/api/deleteDeveloperId", function(req, res) {
+    db.Project.update(
+      { developerEmail: req.body.developerEmail },
+      {
+        where: {
+          id: req.body.id
+        }
+      }
+    ).then(function(dbData) {
+      res.json(dbData);
+    });
+  });
+
+  app.get("/api/doneProjects/:email", function(req, res) {
+    db.Project.findAll({
+      where: {
+        developerEmail: req.params.email,
+        status: "done"
+      }
+    }).then(function(dbDeveloper) {
+      console.log(dbDeveloper);
+
+      res.json(dbDeveloper);
+    });
   });
 };

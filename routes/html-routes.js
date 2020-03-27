@@ -35,13 +35,13 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
 
-  app.get("/client" ,function(req,res){
-    res.sendFile(path.join(__dirname,"../public/clientForm.html"))
-  })
+  app.get("/client", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/clientForm.html"));
+  });
 
-  app.get("/clientProfile" ,function(req,res){
-    res.sendFile(path.join(__dirname,"../public/clientProfile.html"))
-  })
+  app.get("/clientProfile", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/clientProfile.html"));
+  });
 
   app.get("/developer", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/developer.html"));
@@ -49,5 +49,9 @@ module.exports = function(app) {
 
   app.get("/developerProfile", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/developerProfile.html"));
+  });
+  //testing for chat functionality
+  app.get("/chat", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/chat.html"));
   });
 };

@@ -30,18 +30,12 @@ module.exports = function(sequelize, DataTypes) {
     clientEmail: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
       validate: {
         isEmail: true
       }
     },
     developerEmail: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true
-      }
+      type: DataTypes.STRING
     }
   });
 
