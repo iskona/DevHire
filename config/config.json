@@ -1,11 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": "Deepshikha",
+    "password": "example",
     "database": "devhire_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
-  },
+  },          
   "test": {
     "username": "root",
     "password": "example",
