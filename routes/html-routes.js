@@ -35,6 +35,10 @@ module.exports = function(app) {
   app.get("/developerProfile", isAuthenticated, function(req, res) {
     res.render("developerProfile");
   });
+
+  app.get("/viewUpdateDeveloper", isAuthenticated, function(req, res) {
+    res.render("viewUpdateDeveloper");
+  });
   //testing for chat functionality
   // app.get("/chat", function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/chat.html"));
