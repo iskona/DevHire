@@ -216,6 +216,20 @@ module.exports = function (app) {
     });
 });
 
+ /*Create a new client */
+app.put("/api/client", function (req, res) {
+  console.log(req.body);
+  db.Client.update(req.body, {
+    where: {
+      email: req.body.email
+    }
+  }).then(function (dbData) {
+    res.json(dbData);
+  }).catch(function (err) {
+    res.status(401).json(err);
+  });
+});
+
 /*Get client information*/
 app.get("/api/client", function (req, res) {
   if (!req.user) {
