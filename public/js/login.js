@@ -36,8 +36,11 @@ $(document).ready(function () {
         }
         // If there's an error, log the error
       })
-      .catch(function(err) {
-        console.log(err);
-      });
+      .catch(handleLoginErr);
+  }
+
+  function handleLoginErr() {
+    $("#alertLogin .msgAlert").text("Email or password is incorrect. Please try again or create a new account");
+    $("#alertLogin").fadeIn(500);
   }
 });
