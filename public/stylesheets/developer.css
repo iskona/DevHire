@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+/* body {
+    color: #222;
+    background: url("images/signup-bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    opacity:0.9;
+  } */
+
+.devloperInfoContainer {
+  width: 750px;
+  position: relative;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+}
+@media only screen and (max-width: 500px) {
+  .devloperInfoContainer {
+  width:100%
+}
+}
+
+.formContainerTitle {
+  line-height: 1.66;
+  padding: 0;
+  font-weight: bold;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 30px;
+  color: #222;
+  text-align: center;
+  margin-top: 15px;
+}

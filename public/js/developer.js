@@ -62,13 +62,9 @@ $(document).ready(function() {
     })
       .then(function () {
         window.location.replace("/developerProfile");
-        // If there's an error, handle it by throwing up a bootstrap alert
       })
-      .catch(handleLoginErr);
-  }
-
-  function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
+      .catch(function (err) {
+        console.log(err);
+      });
   }
 });
