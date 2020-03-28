@@ -50,13 +50,14 @@
   .ongoingTableTitle,
   .completedTableTitle {
     font-family: 'Roboto Mono', monospace;
-    height: 60px;
+    height: 100px;
     font-weight: bold;
     color: white;
     margin: 5px;
     padding: 15px;
     border-radius: 5px;
     text-align: center;
+    /* width : 50%; */
   }
 
   .newTableTitle {
@@ -71,12 +72,12 @@
     background-color: #2F4F4F;
   }
 
-  .newAccord,
+  /* .newAccord,
   .ongoingAccord,
   .completedAccord {
     margin: 15px;
     padding: 15px;
-  }
+  } */
 
   .btn-link {
     color: black;
@@ -97,6 +98,22 @@
     font-style: italic;
     font-size: 10;
     color: grey;
+  }
+   
+  @media screen and (min-width:768px){
+      .newTableTitle,
+  .ongoingTableTitle,
+  .completedTableTitle {
+    height: 60px;
+  }
+
+  /* @media screen and (max-width:568px){
+        .newTableTitle,
+  .ongoingTableTitle,
+  .completedTableTitle {
+    width: 150px;
+  }
+  } */
   }
 </style>
 
@@ -128,15 +145,15 @@
       <h3>Manage Projects</h3>
     </div>
     <div class="newAccord">
-      <div class="newTableTitle">
-        <h4 class="projectStatus">New Project Offers</h4>
+      <div class="newTableTitle ">
+        <h4>New Project Offers</h4>
       </div>
       <div id="accordion2"></div>
     </div>
     <br><br>
     <div class="ongoingAccord">
       <div class="ongoingTableTitle">
-        <h4 class="projectStatus">Ongoing Projects</h4>
+        <h4>Ongoing Projects</h4>
       </div>
       <div id="accordion1"></div>
     </div>
@@ -144,10 +161,51 @@
     <br>
     <div class="completedAccord">
       <div class="completedTableTitle">
-        <h4 class="projectStatus">Completed Projects</h4>
+        <h4>Completed Projects</h4>
       </div>
       <div id="accordion3"></div>
     </div>
+    <!-- <div class="row text-center">
+      <div class="col-md-12 col-md-3 ml-md-auto containerTitle">
+        <h2 class="mb-1">Manage your Projects!</h2>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-12 ml-md-auto newTableTitle">
+        <h3 class="mb-2">New Project Offers</h3>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-12 col-md-3 ml-md-auto">
+        <div id="accordion2">
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-12 ongoingTableTitle ml-md-auto">
+        <h3 class="mb-2">Ongoing Projects</h3>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-12 col-md-3 ml-md-auto">
+        <div id="accordion1">
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-12 completedTableTitle  ml-md-auto">
+        <h3 class="mb-2">Completed Projects</h3>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-12 col-md-3 ml-md-auto">
+        <div id="accordion3">
+        </div>
+      </div>
+    </div> -->
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./js/developerProjects.js"></script>
