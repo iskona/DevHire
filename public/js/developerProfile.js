@@ -18,7 +18,7 @@ function fillPageData(data) {
     var name = developerData.fullName.split(" ");
     $("#first-name").val(name[0]);
     $("#last-name").val(name[1]);
-    $("#email-id").val(developerData.email);
+    $("#email-id").val(developerData.email).attr("disabled","true");
     $("#contact").val(developerData.contact);
     $("#experience").val(developerData.experience);
     $("#portfolio-link").val(developerData.portfolioLink);

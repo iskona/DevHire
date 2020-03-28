@@ -37,6 +37,10 @@ $(document).ready(function() {
   //on Save to Profile button click
   $("#saveBtn").on("click",function(event){
     event.preventDefault();
+    // if($("first-name").val("") || $("last-name").val("") || (skills.length === 0) || $("last-name").val("") ){
+    //   alert("Enter Mandatory fields ");
+    //   return;
+    // }
     //send a post request on route ('api/developer') with all the form data
     var developerData = {
       fullName : $("#first-name").val().trim()+" "+$("#last-name").val().trim(),
