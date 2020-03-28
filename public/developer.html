@@ -28,7 +28,7 @@
       background-size: cover;
       opacity:0.9;
     } */
-
+ 
   .devloperInfoContainer {
     width: 750px;
     position: relative;
@@ -55,7 +55,7 @@
 </style>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark">
+  <nav class="navbar border navbar-expand-md navbar-dark">
     <a class="navbar-brand" href="/">DevHire</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
       aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,7 +77,6 @@
     <div class="row">
       <div class="col-md-12 col-md-3 ml-md-auto">
         <h2 class="mb-2 formContainerTitle ">Welcome Developer</h2>
-
       </div>
     </div>
     <!-- <nav class="navbar navbar-light bg-light">
@@ -89,7 +88,7 @@
     </header>
 
     <div class="container bg-light p-3 mt-3">
-      <div class="row ">
+      <div class="row mb-1">
         <div class="col-sm-12 col-md-3">
           <p>Full Name:<span class="required">*</span></p>
         </div>
@@ -106,7 +105,7 @@
           </form>
         </div>
       </div>
-      <div class="row">
+      <div class="row mb-1">
         <div class="col-sm-12 col-md-3">
           <p>Email:</p>
         </div>
@@ -142,7 +141,7 @@
           </div>
         </div>
       </div>
-      <div class="row mb-2">
+      <div class="row mb-1">
         <div class="col-sm-12 col-md-3">
           <p>Experience:<span class="required">*</span></p>
         </div>
@@ -153,6 +152,7 @@
       <div class="row">
         <div class="col-sm-12 col-md-3">
           <p>Link to Portfolio:</p>
+          <small>Fields with <span class="required">*</span> are mandatory. </small>
         </div>
         <div class="col-sm-12 col-md-6">
           <input type="text" class="form-control" id="portfolio-link">
@@ -164,7 +164,7 @@
     <div class="row">
       <div class="col text-center">
         <!-- <button class="m-3 p-2 btn" id="saveBtn">Save to Profile</button> -->
-        <form action="developerProfile.html" method="get">
+        <form>
           <button class="m-3 p-2 btn styleBTN text-white px-3" id="saveBtn">Save to Profile</button>
         </form>
       </div>

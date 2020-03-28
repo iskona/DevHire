@@ -11,7 +11,7 @@ $(document).ready(function () {
         $.get("/api/openProjects/" + email).then(function (newProjects) {
             console.log(newProjects);
             if (newProjects.length === 0) {
-                $("#accordion2").append(`<h5 id = "InfoText">No new project offer.</h5>`)
+                $("#accordion2").append(`<h5 id = "InfoText">No new project offers.</h5>`)
             } else {
                 $("#accordion2").append(
                     $("<small>Click on each project title to see the details</small>")

@@ -50,8 +50,11 @@ module.exports = function(app) {
   app.get("/developerProfile", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/developerProfile.html"));
   });
-  //testing for chat functionality
-  app.get("/chat", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/chat.html"));
+  //for latest view profile page
+  app.get("/viewProfile", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/viewProfile.html"));
+  });
+  app.get("/view-update-developer", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/view-update-developer.html"));
   });
 };
