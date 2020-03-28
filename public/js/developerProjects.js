@@ -11,11 +11,7 @@ $(document).ready(function () {
         $.get("/api/openProjects/" + email).then(function (newProjects) {
             console.log(newProjects);
             if (newProjects.length === 0) {
-                $("#accordion2").append(
-                    $(
-                        "<h4>There are no New Project Offers yet.</h4>"
-                    )
-                );
+                $("#accordion2").append(`<h5 id = "InfoText">No new project offer.</h5>`)
             } else {
                 $("#accordion2").append(
                     $("<small>Click on each project title to see the details</small>")
@@ -85,7 +81,7 @@ $(document).ready(function () {
             console.log(projectsData);
             if (projectsData.length === 0) {
                 //display a message saying "There are no Ongoing projects yet. Find the projects in the below section"
-                $("#accordion1").append($("<h4>There are no Ongoing projects yet.</h4>"));
+                $("#accordion1").append(`<h5 id = "InfoText">No Ongoing projects.</h5>`);
             }
             else {
                 $("#accordion1").append($("<small>Click on each project title to see the details</small>"));
@@ -134,11 +130,7 @@ $(document).ready(function () {
         $.get("/api/doneProjects/" + email).then(function (doneProjects) {
             console.log(doneProjects);
             if (doneProjects.length === 0) {
-                $("#accordion3").append(
-                    $(
-                        "<h4>There are no Projects in Review.</h4>"
-                    )
-                );
+                $("#accordion3").append(`<h5 id = "InfoText">No Completed projects.</h5>`);
             } else {
                 $("#accordion3").append(
                     $("<small>Click on each project title to see the details</small>")

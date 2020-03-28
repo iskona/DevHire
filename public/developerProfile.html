@@ -20,6 +20,85 @@
   <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Raleway|Monoton&display=swap" rel="stylesheet">
   <link href="stylesheets/style.css" rel="stylesheet">
 </head>
+<style>
+   body {
+      color: #222;
+      background: url("images/signup-bg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      opacity:0.9;
+    }
+  .projectaccordianContainer {
+    width: 60%;
+    background-color: white;
+    border-radius: 10px;
+    height: 200vh;
+    opacity: 0.9;
+  }
+
+  /* accordian styling */
+  .accordion2,
+  .accordion1,
+  .accordion3 .completedProjectAccordians {
+    margin-bottom: 5%;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid white;
+  }
+
+  .newTableTitle,
+  .ongoingTableTitle,
+  .completedTableTitle {
+    font-family: 'Roboto Mono', monospace;
+    height: 60px;
+    font-weight: bold;
+    color: white;
+    margin: 5px;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .newTableTitle {
+    background-color: #CD5C5C;
+  }
+
+  .ongoingTableTitle {
+    background-color: #CD853F;
+  }
+
+  .completedTableTitle {
+    background-color: #2F4F4F;
+  }
+
+  .newAccord,
+  .ongoingAccord,
+  .completedAccord {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .btn-link {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .containerTitle {
+    line-height: 3px;
+    margin: 20px;
+    padding: 20px;
+    font-family: 'Alfa Slab One', cursive;
+  }
+
+  #InfoText {
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 10;
+    color: grey;
+  }
+</style>
 
 <body>
   <nav class="navbar navbar-expand-md navbar-dark">
@@ -43,49 +122,32 @@
       </ul>
     </div>
   </nav>
-  <div class="container mb-5 mt-4">
-    <div class="row">
-      <div class="col-md-12 col-md-3 ml-md-auto">
-        <h2 class="mb-2">Manage your Projects!</h2>
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-md-12 col-md-3 ml-md-auto">
-        <h3 class="mb-2">New Project Offers:</h3>
-      </div>
-    </div>
-    <div class="row mt-2">
-      <div class="col-md-12 col-md-3 ml-md-auto">
-        <div id="accordion2">
-        </div>
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-md-12 col-md-3 ml-md-auto">
-        <h3 class="mb-2">Ongoing Projects:</h3>
-      </div>
-    </div>
-    <div class="row mt-2">
-      <div class="col-md-12 col-md-3 ml-md-auto">
-        <div id="accordion1">
-        </div>
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-md-12 col-md-3 ml-md-auto">
-        <h3 class="mb-2">Projects in Review:</h3>
-      </div>
-    </div>
-    <div class="row mt-2">
-      <div class="col-md-12 col-md-3 ml-md-auto">
-        <div id="accordion3">
-        </div>
-      </div>
-    </div>
+  <div class="container projectaccordianContainer mb-5 mt-4">
 
+    <div class="containerTitle font-weight-bold text-center">
+      <h3>Manage Projects</h3>
+    </div>
+    <div class="newAccord">
+      <div class="newTableTitle">
+        <h4 class="projectStatus">New Project Offers</h4>
+      </div>
+      <div id="accordion2"></div>
+    </div>
+    <br><br>
+    <div class="ongoingAccord">
+      <div class="ongoingTableTitle">
+        <h4 class="projectStatus">Ongoing Projects</h4>
+      </div>
+      <div id="accordion1"></div>
+    </div>
+    <br>
+    <br>
+    <div class="completedAccord">
+      <div class="completedTableTitle">
+        <h4 class="projectStatus">Completed Projects</h4>
+      </div>
+      <div id="accordion3"></div>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./js/developerProjects.js"></script>

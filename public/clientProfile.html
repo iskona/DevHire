@@ -5,33 +5,396 @@
   <title>ClientProfile</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Raleway|Monoton&display=swap" rel="stylesheet">
   <link href="stylesheets/style.css" rel="stylesheet">
+
   <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
     body {
       color: black;
       background: url("images/signup-bg.jpg") no-repeat center center fixed;
       background-size: cover;
+      opacity: 0.9;
     }
+
+    .clientDetialsJumbotron {
+      width: 60%;
+      margin: auto;
+      height: 300px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .clientInfoCard {
+      width: 60%;
+      margin: auto;
+      text-align: center;
+      margin-bottom: 40px;
+      height: 400px;
+    }
+
+    .profile-header-img>img.img-circle {
+      width: 100px;
+      height: 100px;
+    }
+
+    .profile-header-container {
+      margin: 0 auto;
+      text-align: center;
+      width: 120px;
+      height: 120px;
+    }
+
+    #postProject {
+      padding: 0 50px;
+      cursor: pointer;
+      font-size: 15px;
+      color: white;
+      border-radius: 5px;
+      height: 50px;
+      background-color: #2F4F4F;
+    }
+
+    /*---------------post New Project  page styling-----*/
+    .postProjectPage {
+      border-radius: 10px;
+      padding: 50px 85px;
+    }
+
+    .postProjectPageContainer {
+      width: 750px;
+      position: relative;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 10px;
+    }
+
+    .form-group {
+      overflow: hidden;
+      margin: 40px;
+    }
+
+    .form-input {
+      width: 100%;
+      border: 1px solid #ebebeb;
+      border-radius: 5px;
+      padding: 17px 20px;
+      box-sizing: border-box;
+      font-size: 14px;
+      font-weight: 500;
+      color: #222;
+    }
+
+    .form-title {
+      line-height: 1.66;
+      padding: 0;
+      font-weight: bold;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 30px;
+      color: #222;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    #projectPostButton {
+      padding: 0 50px;
+      cursor: pointer;
+      font-size: 15px;
+      color: white;
+      border-radius: 5px;
+      height: 50px;
+      background-color: #2F4F4F;
+    }
+
+    .lead {
+      font-weight: bold;
+      font-size: 25px;
+    }
+
+    #allPosting {
+      font-size: 20px;
+    }
+
+    /*--------------- accordian styling--------------- */
+
+    .projectTablePage {
+      width: 60%;
+      background-color: white;
+      border-radius: 10px;
+      height: 200vh;
+      opacity: 0.9;
+    }
+
+    .openAccord,
+    .assignedAccord,
+    .completedAccord {
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .openTableTitle,
+    .assignedTableTitle,
+    .completedTableTitle {
+      font-family: 'Roboto Mono', monospace;
+      height: 60px;
+      font-weight: bold;
+      background-color: #008080;
+      color: white;
+      margin: 5px;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .openTableTitle {
+      background-color: #CD5C5C;
+    }
+
+    .assignedTableTitle {
+      background-color: #CD853F;
+    }
+
+    .completedTableTitle {
+      background-color: #2F4F4F;
+    }
+
+    .openProjectAccordians,
+    .assignedProjectAccordians,
+    .completedProjectAccordians {
+      margin-bottom: 5%;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid white;
+    }
+
+    .btn-link {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .containerTitle {
+      line-height: 3px;
+      margin: 20px;
+      padding: 20px;
+      font-family: 'Alfa Slab One', cursive;
+    }
+
+    /* card styling */
+
+    .assignDeveloperPage {
+      background-color: white;
+      margin: auto;
+      width: 750px;
+      height: 1000px;
+      border-radius: 10px;
+
+    }
+
+    .selectedProjectTitle {
+      /* margin: auto; */
+      padding: 10px;
+      margin-top: 20px;
+      height: 50px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .optionCards {
+      margin: auto;
+      background-color: #C0C0C0;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    /* .selectDev{
+      text-align:right;
+    } */
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-dark">
+  <nav class="navbar navbar-expand-md navbar-dark">
     <a class="navbar-brand" href="/">DevHire</a>
-    <a class="btn btn-primary btn-lg bg-primary" href="/logout">Logout</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse  pr-5" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item mr-5 m-1">
+          <a class=" btn btn-primary btn-lg bg-primary p-2" href="clientProfile.html">Profile</a>
+        </li>
+        <li class="nav-item m-1">
+          <a class=" btn btn-primary btn-lg bg-primary" href="index.html">Logout</a>
+        </li>
+      </ul>
+    </div>
   </nav>
-  <div>
-    <h2>Welcome <span class="member-name"></span></h2>
+  <div class="container clientProf" id="clientProfileContainer">
+    <section>
+      <div class="container py-3">
+        <div class="card clientInfoCard">
+          <div class="row">
+            <div class="profile-header-container">
+              <div class="profile-header-img">
+                <br>
+                <img class="img-circle" src="images/profilePhoto.png">
+              </div>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center mt-3">
+              <h4 mt-2 text-center id="clientName"></h4>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col text-center text-muted">
+              <p text-center id="clientcompany"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center text-muted">
+              <p text-center id="clientDescription"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center text-muted">
+              <p text-center id="clientEmail"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center text-muted">
+              <p text-center id="clientcontact"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="jumbotron clientDetialsJumbotron">
+      <div class="row">
+        <div class="col text-center">
+          <p class="lead text-left">My Postings</p>
+        </div>
+        <div class="col text-center ">
+
+          <button type="button" class="btn btn-light text-right text-success font-weight-bold" id="allPosting">
+            My Postings</button>
+        </div>
+      </div>
+      <hr class="my-4">
+
+      <div class="text-center">
+        <button id="postProject">Post a Project</button>
+      </div>
+    </div>
+
   </div>
-  <div class="container" id ="clientProfileContainer">
-   
+
+  <!-- Post project page would appear when user clicks on post button. -->
+
+  <section class="signup postProjectPage d-none">
+    <div class="container postProjectPageContainer">
+      <div class="signup-content">
+        <form method="POST" class="project-Form">
+          <br>
+          <h2 class="form-title text-center">Project Details</h2>
+          <hr>
+          <div class="form-group row projectFormGroup">
+            <label for="fullName" class="col-sm-2 col-form-label">Project Title:<span class="required">*</span></label>
+            <div class="col">
+              <input type="text" class="form-control" id="projectName" placeholder="Name of yor project">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="skills" class="col-sm-2 col-form-label">Skills Required:<span class="required">*</span></label>
+            <div class="col">
+              <input type="text" class="form-control" id="projectSkills" placeholder="Skills needed for the project.">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="projectDescription" class="col-sm-2 col-form-label">Description:<span
+                class="required">*</span></label>
+            <div class="col">
+              <textarea class="form-control" id="projectDescription" rows="5"
+                placeholder="Please provide a brief description about the project."></textarea>
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="submit" id="projectPostButton">Post</button>
+          </div>
+        </form>
+        <br>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accordian to display Project data -->
+  <br>
+  <br>
+  <div class="container projectTablePage d-none">
+    <div class="containerTitle font-weight-bold text-center">
+      <h3>Manage Projects</h3>
+    </div>
+    <div class="openAccord">
+      <div class="openTableTitle">
+        <h4 class="projectStatus">Open Projects</h4>
+      </div>
+      <div id="accordion" class="openProjectAccordians"></div>
+    </div>
+    <br><br>
+    <div class="assignedAccord">
+      <div class="assignedTableTitle">
+        <h4 class="projectStatus">Assigned Projects</h4>
+      </div>
+      <div id="accordion" class="assignedProjectAccordians"></div>
+    </div>
+    <br>
+    <br>
+    <div class="completedAccord">
+      <div class="completedTableTitle">
+        <h4 class="projectStatus">Completed Projects</h4>
+      </div>
+      <div id="accordion" class="completedProjectAccordians"></div>
+    </div>
   </div>
+
+  <!-- expandable project div with developer list -->
+
+  <div class="container text-center assignDeveloperPage d-none">
+    <div class="pageTitlediv">
+      <div class=" ProjectTitledisplay">
+        <br>
+        <h4 class="selectedProjectTitle">Project -</h4>
+      </div>
+      <p class="displayMessage text-success"></p>
+    </div>
+    <div class="optionDiv d-none">
+      <br>
+      <div id="developerlist"></div>
+    </div>
+    <br><br>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/client.js"></script>
-
+  <script type="text/javascript" src="js/clientProfile.js"></script>
 </body>
 
 </html>
