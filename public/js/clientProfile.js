@@ -62,8 +62,9 @@ function getDeveloperList() {
                     <h5 class="card-title font-weight-bold pull-left">${data[i].fullName.toUpperCase()}</h5>
                     <button class="selectDev btn btn-primary  float-right" data-developerEmailId="${data[i].email}">Assign</button>
                     <br>
-                    <p class="card-text">Skills: ${data[i].skills}</p>
+                   <p></p>
                     <p class="card-text">Experience: ${data[i].experience}yrs</p>
+                    <p class="card-text">Skills: ${data[i].skills}</p>
                     <p><a  class ="githubLink"href=" ${data[i].portfolioLink}" target ="_blank"> PortFolio</a></p>
                 </div>
             </div> <br>`);
