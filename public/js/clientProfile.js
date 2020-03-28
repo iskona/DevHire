@@ -12,6 +12,10 @@ function displayClientProfile() {
 
     });
 }
+$(".edit").on("click", function(event){
+    event.preventDefault();
+    window.location.replace("/client")
+})
 /*  Clicking  on "Post new project" would  trigger an event listener hide 
 client profile and display project detail form*/
 
@@ -58,9 +62,10 @@ function getDeveloperList() {
                     <h5 class="card-title font-weight-bold pull-left">${data[i].fullName.toUpperCase()}</h5>
                     <button class="selectDev btn btn-primary  float-right" data-developerEmailId="${data[i].email}">Assign</button>
                     <br>
-                    <p class="card-text">Skills: ${data[i].skills}</p>
+                   <p></p>
                     <p class="card-text">Experience: ${data[i].experience}yrs</p>
-                    <p> github ID : ${data[i].portfolioLink}</p>
+                    <p class="card-text">Skills: ${data[i].skills}</p>
+                    <p><a  class ="githubLink"href=" ${data[i].portfolioLink}" target ="_blank"> PortFolio</a></p>
                 </div>
             </div> <br>`);
         }

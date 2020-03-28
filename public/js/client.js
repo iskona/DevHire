@@ -7,12 +7,24 @@ $(document).ready(function () {
     var clientDesc = $("#clientDesc");
     var clientSave = $("#clientSave");
     var signUpForm = $("form.signup-form");
+    var clientAlreadyExists = false;
 
     $.get("/api/user_data").then(function(data) {
         console.log(data);
         clientEmail.val(data.email);
         clientEmail.attr("disabled","true");
       });
+
+    $.get("/api/client").then(function(data){
+        clientFname.val(data.firstName);
+        clientLname.val(data.lastName);
+        clientContact.val(data.contact);
+        clientCompany.val(data.company);
+        clientDesc.val(data.description);
+        clientAlreadyExists = true;
+    }).catch(function() {
+
+    }); 
 
     // When the form is submitted, we validate there's an email and password entered
     signUpForm.on("submit", function (event) {
@@ -33,13 +45,27 @@ $(document).ready(function () {
         saveClientDetails(userData)
     });
     function saveClientDetails(userData) {
-        $.post("/api/client", userData)
+        if(clientAlreadyExists === false)
+        {
+            $.post("/api/client", userData)
             .then(function () {
                 window.location.replace("/clientProfile")
             })
             .catch(function (err) {
                 console.log(err);
             });
+        }else {
+            $.ajax({
+                method: "PUT",
+                url: '/api/client',
+                data: userData,
+            }).then(function () {
+                window.location.replace("/clientProfile")
+            }).catch(function (err) {
+                console.log(err);
+            });
+        }
+        
     }
 });
 

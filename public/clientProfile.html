@@ -16,6 +16,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Raleway|Monoton&display=swap" rel="stylesheet">
   <link href="stylesheets/style.css" rel="stylesheet">
@@ -41,9 +43,12 @@
     .clientInfoCard {
       width: 60%;
       margin: auto;
-      text-align: center;
+      /* text-align: center; */
       margin-bottom: 40px;
       height: 400px;
+    }
+    .cardContent{
+      text-align: center;
     }
 
     .profile-header-img>img.img-circle {
@@ -68,6 +73,10 @@
       background-color: #2F4F4F;
     }
 
+.edit{
+  margin:10px;
+  width:50px;
+}
     /*---------------post New Project  page styling-----*/
     .postProjectPage {
       border-radius: 10px;
@@ -200,9 +209,13 @@
       background-color: white;
       margin: auto;
       width: 750px;
-      height: 1000px;
+      height: 1800px;
       border-radius: 10px;
 
+    }
+
+    .githubLink {
+      color: blue;
     }
 
     .selectedProjectTitle {
@@ -220,6 +233,12 @@
       border-radius: 10px;
       text-align: left;
     }
+
+    @media only screen and (max-width: 500px) {
+  .projectTablePage {
+    width:100%
+  }
+}
 
     /* .selectDev{
       text-align:right;
@@ -241,7 +260,7 @@
           <a class=" btn btn-primary btn-lg bg-primary p-2" href="clientProfile.html">Profile</a>
         </li>
         <li class="nav-item m-1">
-          <a class=" btn btn-primary btn-lg bg-primary" href="index.html">Logout</a>
+          <a class=" btn btn-primary btn-lg bg-primary" href="/logout">Logout</a>
         </li>
       </ul>
     </div>
@@ -251,12 +270,16 @@
       <div class="container py-3">
         <div class="card clientInfoCard">
           <div class="row">
+            <div class="col float-right">
+              <button class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <div class="row cardContent">
             <div class="profile-header-container">
               <div class="profile-header-img">
                 <br>
                 <img class="img-circle" src="images/profilePhoto.png">
               </div>
-
             </div>
           </div>
           <div class="row">
