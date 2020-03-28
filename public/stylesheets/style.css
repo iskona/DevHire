@@ -1,54 +1,87 @@
-html,
-body {
-  height: 100%;
-}
 
-.container {
-  margin-top: 5%;
-}
+    @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Kanit&display=swap');
+    html,
+    body {
+      height: 100%;
+      color: #222;
+      background: url("../images/signup-bg.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
 
-form.signup,
-form.login {
-  margin-top: 10px;
-}
+    form.signup,
+    form.login {
+      margin-top: 10px;
+    }
 
-.navbar {
-  background-color: #072443;
-  border: 0;
-  border-radius: 0;
-}
+    .navbar {
+      background-color: #072443;
+      border: 0;
+      border-radius: 0;
+    }
 
-.navbar-brand {
-  margin-left: 10%;
-  font-family: 'Monoton', cursive;
-}
+    .navbar-brand {
+      margin-left: 10%;
+      font-family: 'Monoton', cursive;
+    }
 
-.navbar a {
-  margin-right: 10%;
-}
+    .navbar a {
+      margin-right: 10%;
+    }
 
-.styleBTN {
-  background-color: #ff5500;
-  border: none;
-  margin-right: 3%;
-  font-family: 'Raleway', cursive;
-}
+    .styleBTN {
+      background-color: #072443;
+      color:white;
+      border: none;
+      margin-right: 3%;
+      font-family: 'Roboto', sans-serif;
+      padding:15px;
+      border-radius: 8px;
+    }
+    #indexHeader{
+      margin : auto;
+      color:black
+    }
 
-h2,h3{
-  font-family: 'Alfa Slab One', cursive;
-  margin-bottom: 5%;
-}
+    h2,h3{
+      font-family: 'Kanit', sans-serif;
+      margin-bottom: 5%;
+      font-weight: bold;
+    }
 
-a {
-  color: #ff5500;
-}
-#add-btn {
-  background-color:#8c8c8c;
-  color: black;
-}
-.skill-btn{
-  background-color:#8c8c8c;
-}
-.required {
-  color: red;
-}
+    a {
+      color: red;
+    }
+    #add-btn {
+      background-color:#8c8c8c;
+      color: black;
+    }
+    .skill-btn{
+      background-color:#8c8c8c;
+    }
+    .required {
+      color: red;
+    }
+    /* Login Form styling */
+    .loginFormContainer,.signUpFormContainer{
+      width: 750px;
+          position: relative;
+          margin: 0 auto;
+          background-color: white;
+          margin-top:80px;
+          border-radius: 10px;
+          background-color: #D3D3D3;
+          opacity:0.9;
+    }
+    .loginFormTitle,.signUpFormTitle{
+      margin-top:14px;
+      text-align:center;
+    }
+    .loginInput,.signUPInput{
+      font-weight: bold;
+      font-size:15px
+    }
+    .form-control{
+      height:40px;
+      width:100%
+    }
