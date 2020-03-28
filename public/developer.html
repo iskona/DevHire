@@ -20,6 +20,33 @@
   <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Raleway|Monoton&display=swap" rel="stylesheet">
   <link href="stylesheets/style.css" rel="stylesheet">
 </head>
+<style>
+   @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+   /* body {
+      color: #222;
+      background: url("images/signup-bg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      opacity:0.9;
+    } */
+
+  .devloperInfoContainer {
+    width: 750px;
+    position: relative;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+  }
+  .formContainerTitle {
+      line-height: 1.66;
+      padding: 0;
+      font-weight: bold;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 30px;
+      color: #222;
+      text-align: center;
+      margin-top: 15px;
+    }
+</style>
 
 <body>
   <nav class="navbar navbar-expand-md navbar-dark">
@@ -38,11 +65,13 @@
       </ul>
     </div>
   </nav>
-  <div class="container  mb-5">
+  <br>
+  <br>
+  <div class="container devloperInfoContainer mb-5">
     <div class="row">
       <div class="col-md-12 col-md-3 ml-md-auto">
-        <h2 class="mb-2">Welcome Developer!</h2>
-        <small>Add your personal and professional information below:</small>
+        <h2 class="mb-2 formContainerTitle ">Welcome Developer</h2>
+
       </div>
     </div>
     <!-- <nav class="navbar navbar-light bg-light">
@@ -138,4 +167,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./js/developer.js"></script>
 </body>
+
 </html>

@@ -27,7 +27,7 @@
       color: black;
       background: url("images/signup-bg.jpg") no-repeat center center fixed;
       background-size: cover;
-      opacity:0.9;
+      opacity: 0.9;
     }
 
     .clientDetialsJumbotron {
@@ -73,6 +73,7 @@
       border-radius: 10px;
       padding: 50px 85px;
     }
+
     .postProjectPageContainer {
       width: 750px;
       position: relative;
@@ -80,10 +81,12 @@
       background: #fff;
       border-radius: 10px;
     }
+
     .form-group {
       overflow: hidden;
-      margin:40px;
+      margin: 40px;
     }
+
     .form-input {
       width: 100%;
       border: 1px solid #ebebeb;
@@ -115,103 +118,118 @@
       height: 50px;
       background-color: #2F4F4F;
     }
-    .lead{
-      font-weight:bold;
-      font-size:25px;
+
+    .lead {
+      font-weight: bold;
+      font-size: 25px;
     }
-    #allPosting{
-      font-size:20px;
+
+    #allPosting {
+      font-size: 20px;
     }
-    /*--------------- accordian styling--------------- */                                                     
+
+    /*--------------- accordian styling--------------- */
 
     .projectTablePage {
       width: 60%;
       background-color: white;
       border-radius: 10px;
       height: 200vh;
-      opacity:0.9;
-    }
-    .openAccord,.assignedAccord,.completedAccord 
-    {
-      margin:  10px;
-      padding: 10px;
-    }
-    .openTableTitle,.assignedTableTitle,.completedTableTitle {
-      font-family: 'Roboto Mono', monospace;
-      height: 60px;
-      font-weight :bold;
-      background-color: #008080;
-      color:white;
-      margin:5px;
-      padding:15px;
-      border-radius: 5px;
-      text-align:center;
+      opacity: 0.9;
     }
 
-    .openTableTitle{
+    .openAccord,
+    .assignedAccord,
+    .completedAccord {
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .openTableTitle,
+    .assignedTableTitle,
+    .completedTableTitle {
+      font-family: 'Roboto Mono', monospace;
+      height: 60px;
+      font-weight: bold;
+      background-color: #008080;
+      color: white;
+      margin: 5px;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .openTableTitle {
       background-color: #CD5C5C;
     }
-    .assignedTableTitle{
+
+    .assignedTableTitle {
       background-color: #CD853F;
     }
-    .completedTableTitle{
+
+    .completedTableTitle {
       background-color: #2F4F4F;
     }
 
-    .openProjectAccordians,.assignedProjectAccordians,
-    .completedProjectAccordians{
+    .openProjectAccordians,
+    .assignedProjectAccordians,
+    .completedProjectAccordians {
       margin-bottom: 5%;
       border-radius: 5px;
-      margin:10px;
-      padding:20px;
-      border:1px solid white;
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid white;
     }
 
     .btn-link {
       color: black;
       text-decoration: none;
-      font-weight:bold;
+      font-weight: bold;
     }
+
     .containerTitle {
       line-height: 3px;
       margin: 20px;
       padding: 20px;
       font-family: 'Alfa Slab One', cursive;
     }
-  /* card styling */
-    
-    .assignDeveloperPage {
-        background-color: white;
-        margin: auto;
-        width: 750px;
-        height: 700px;
-        border-radius: 10px;
 
-    }   
+    /* card styling */
+
+    .assignDeveloperPage {
+      background-color: white;
+      margin: auto;
+      width: 750px;
+      height: 1000px;
+      border-radius: 10px;
+
+    }
+
     .selectedProjectTitle {
       /* margin: auto; */
       padding: 10px;
-      margin-top:20px;
+      margin-top: 20px;
       height: 50px;
       font-weight: bold;
       text-align: center;
-    } 
-    .optionCards{
-      margin:auto; 
-      background-color:#C0C0C0;
+    }
+
+    .optionCards {
+      margin: auto;
+      background-color: #C0C0C0;
       border-radius: 10px;
       text-align: left;
     }
+
     /* .selectDev{
       text-align:right;
     } */
-
   </style>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-md navbar-dark">
-    <a class="navbar-brand" href="#">DevHire</a>
+    <a class="navbar-brand" href="/">DevHire</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
       aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -345,18 +363,18 @@
     <br><br>
     <div class="assignedAccord">
       <div class="assignedTableTitle">
-      <h4 class="projectStatus">Assigned Projects</h4>
+        <h4 class="projectStatus">Assigned Projects</h4>
+      </div>
+      <div id="accordion" class="assignedProjectAccordians"></div>
     </div>
-    <div id="accordion" class="assignedProjectAccordians"></div>
-  </div>
-  <br>
-  <br>
-  <div class="completedAccord">
-    <div class="completedTableTitle">
-      <h4 class="projectStatus">Completed Projects</h4>
+    <br>
+    <br>
+    <div class="completedAccord">
+      <div class="completedTableTitle">
+        <h4 class="projectStatus">Completed Projects</h4>
+      </div>
+      <div id="accordion" class="completedProjectAccordians"></div>
     </div>
-    <div id="accordion" class="completedProjectAccordians"></div>
-  </div>
   </div>
 
   <!-- expandable project div with developer list -->
