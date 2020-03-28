@@ -12,6 +12,10 @@ function displayClientProfile() {
 
     });
 }
+$(".edit").on("click", function(event){
+    event.preventDefault();
+    window.location.replace("/client")
+})
 /*  Clicking  on "Post new project" would  trigger an event listener hide 
 client profile and display project detail form*/
 
@@ -60,7 +64,7 @@ function getDeveloperList() {
                     <br>
                     <p class="card-text">Skills: ${data[i].skills}</p>
                     <p class="card-text">Experience: ${data[i].experience}yrs</p>
-                    <p> github ID : ${data[i].portfolioLink}</p>
+                    <p><a  class ="githubLink"href=" ${data[i].portfolioLink}" target ="_blank"> PortFolio</a></p>
                 </div>
             </div> <br>`);
         }
