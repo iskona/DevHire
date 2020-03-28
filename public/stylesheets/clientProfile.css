@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+body {
+  color: black;
+  background: url("images/signup-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.9;
+}
+
+.clientDetialsJumbotron {
+  width: 60%;
+  margin: auto;
+  height: 300px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.clientInfoCard {
+  width: 60%;
+  margin: auto;
+  /* text-align: center; */
+  margin-bottom: 40px;
+  height: 400px;
+}
+
+.cardContent {
+  text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+
+  .clientDetialsJumbotron,
+  .clientInfoCard {
+    width: 100%
+  }
+}
+
+.profile-header-img>img.img-circle {
+  width: 100px;
+  height: 100px;
+}
+
+.profile-header-container {
+  margin: 0 auto;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+}
+
+#postProject {
+  padding: 0 50px;
+  cursor: pointer;
+  font-size: 15px;
+  color: white;
+  border-radius: 5px;
+  height: 50px;
+  background-color: #2F4F4F;
+}
+
+.edit {
+  margin: 10px;
+  width: 50px;
+}
+
+/*---------------post New Project  page styling-----*/
+.postProjectPage {
+  border-radius: 10px;
+  padding: 50px 85px;
+}
+
+.postProjectPageContainer {
+  width: 750px;
+  position: relative;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.form-group {
+  overflow: hidden;
+  margin: 40px;
+}
+
+.form-input {
+  width: 100%;
+  border: 1px solid #ebebeb;
+  border-radius: 5px;
+  padding: 17px 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+}
+
+.form-title {
+  line-height: 1.66;
+  padding: 0;
+  font-weight: bold;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 30px;
+  color: #222;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#projectPostButton {
+  padding: 0 50px;
+  cursor: pointer;
+  font-size: 15px;
+  color: white;
+  border-radius: 5px;
+  height: 50px;
+  background-color: #2F4F4F;
+}
+
+.lead {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#allPosting {
+  font-size: 20px;
+}
+
+/*--------------- accordian styling--------------- */
+
+.projectTablePage {
+  width: 60%;
+  background-color: white;
+  border-radius: 10px;
+  height: 200vh;
+  opacity: 0.9;
+}
+
+.openAccord,
+.assignedAccord,
+.completedAccord {
+  margin: 10px;
+  padding: 10px;
+}
+
+.openTableTitle,
+.assignedTableTitle,
+.completedTableTitle {
+  font-family: 'Roboto Mono', monospace;
+  height: 60px;
+  font-weight: bold;
+  background-color: #008080;
+  color: white;
+  margin: 5px;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.openTableTitle {
+  background-color: #CD5C5C;
+}
+
+.assignedTableTitle {
+  background-color: #CD853F;
+}
+
+.completedTableTitle {
+  background-color: #2F4F4F;
+}
+
+.openProjectAccordians,
+.assignedProjectAccordians,
+.completedProjectAccordians {
+  margin-bottom: 5%;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid white;
+}
+
+.btn-link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.containerTitle {
+  line-height: 3px;
+  margin: 20px;
+  padding: 20px;
+  font-family: 'Alfa Slab One', cursive;
+}
+
+/* card styling */
+
+.assignDeveloperPage {
+  background-color: white;
+  margin: auto;
+  width: 750px;
+  height: 1800px;
+  border-radius: 10px;
+
+}
+
+.githubLink {
+  color: blue;
+}
+
+.selectedProjectTitle {
+  /* margin: auto; */
+  padding: 10px;
+  margin-top: 20px;
+  height: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.optionCards {
+  margin: auto;
+  background-color: #C0C0C0;
+  border-radius: 10px;
+  text-align: left;
+}
+
+@media only screen and (max-width: 500px) {
+  .projectTablePage {
+    width: 100%
+  }
+}

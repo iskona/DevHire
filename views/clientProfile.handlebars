@@ -1,0 +1,172 @@
+<nav class="navbar navbar-expand-md navbar-dark">
+    <a class="navbar-brand" href="/">DevHire</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse  pr-5" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item mr-5 m-1">
+                <a class=" btn btn-primary btn-lg bg-primary p-2" href="/clientProfile">Profile</a>
+            </li>
+            <li class="nav-item m-1">
+                <a class=" btn btn-primary btn-lg bg-primary" href="/logout">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container clientProf" id="clientProfileContainer">
+    <section>
+        <div class="container py-3">
+            <div class="card clientInfoCard">
+                <div class="row">
+                    <div class="col float-right">
+                        <button class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                <div class="row cardContent">
+                    <div class="profile-header-container">
+                        <div class="profile-header-img">
+                            <br>
+                            <img class="img-circle" src="images/profilePhoto.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center mt-3">
+                        <h4 mt-2 text-center id="clientName"></h4>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col text-center text-muted">
+                        <p text-center id="clientcompany"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center text-muted">
+                        <p text-center id="clientDescription"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center text-muted">
+                        <p text-center id="clientEmail"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center text-muted">
+                        <p text-center id="clientcontact"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="jumbotron clientDetialsJumbotron">
+        <div class="row">
+            <div class="col text-center">
+                <p class="lead text-left">My Postings</p>
+            </div>
+            <div class="col text-center ">
+
+                <button type="button" class="btn btn-light text-right text-success font-weight-bold" id="allPosting">
+                    My Postings</button>
+            </div>
+        </div>
+        <hr class="my-4">
+
+        <div class="text-center">
+            <button id="postProject">Post a Project</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Post project page would appear when user clicks on post button. -->
+
+<section class="signup postProjectPage d-none">
+    <div class="container postProjectPageContainer">
+        <div class="signup-content">
+            <form method="POST" class="project-Form">
+                <br>
+                <h2 class="form-title text-center">Project Details</h2>
+                <hr>
+                <div class="form-group row projectFormGroup">
+                    <label for="fullName" class="col-sm-2 col-form-label">Project Title:<span
+                            class="required">*</span></label>
+                    <div class="col">
+                        <input type="text" class="form-control" id="projectName" placeholder="Name of yor project">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="skills" class="col-sm-2 col-form-label">Skills Required:<span
+                            class="required">*</span></label>
+                    <div class="col">
+                        <input type="text" class="form-control" id="projectSkills"
+                            placeholder="Skills needed for the project.">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="projectDescription" class="col-sm-2 col-form-label">Description:<span
+                            class="required">*</span></label>
+                    <div class="col">
+                        <textarea class="form-control" id="projectDescription" rows="5"
+                            placeholder="Please provide a brief description about the project."></textarea>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" id="projectPostButton">Post</button>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</section>
+
+<!-- Accordian to display Project data -->
+<br>
+<br>
+<div class="container projectTablePage d-none">
+    <div class="containerTitle font-weight-bold text-center">
+        <h3>Manage Projects</h3>
+    </div>
+    <div class="openAccord">
+        <div class="openTableTitle">
+            <h4 class="projectStatus">Open Projects</h4>
+        </div>
+        <div id="accordion" class="openProjectAccordians"></div>
+    </div>
+    <br><br>
+    <div class="assignedAccord">
+        <div class="assignedTableTitle">
+            <h4 class="projectStatus">Assigned Projects</h4>
+        </div>
+        <div id="accordion" class="assignedProjectAccordians"></div>
+    </div>
+    <br>
+    <br>
+    <div class="completedAccord">
+        <div class="completedTableTitle">
+            <h4 class="projectStatus">Completed Projects</h4>
+        </div>
+        <div id="accordion" class="completedProjectAccordians"></div>
+    </div>
+</div>
+
+<!-- expandable project div with developer list -->
+
+<div class="container text-center assignDeveloperPage d-none">
+    <div class="pageTitlediv">
+        <div class=" ProjectTitledisplay">
+            <br>
+            <h4 class="selectedProjectTitle">Project -</h4>
+        </div>
+        <p class="displayMessage text-success"></p>
+    </div>
+    <div class="optionDiv d-none">
+        <br>
+        <div id="developerlist"></div>
+    </div>
+    <br><br>
+</div>

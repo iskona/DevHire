@@ -1,0 +1,102 @@
+body {
+    color: #222;
+    background: url("images/signup-bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.9;
+  }
+
+  .projectaccordianContainer {
+    width: 60%;
+    background-color: white;
+    border-radius: 10px;
+    height: 200vh;
+    opacity: 0.9;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .projectaccordianContainer {
+      width: 100%
+    }
+  }
+
+  /* accordian styling */
+  .accordion2,
+  .accordion1,
+  .accordion3 .completedProjectAccordians {
+    margin-bottom: 5%;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid white;
+  }
+
+  .newTableTitle,
+  .ongoingTableTitle,
+  .completedTableTitle {
+    font-family: 'Roboto Mono', monospace;
+    height: 100px;
+    font-weight: bold;
+    color: white;
+    margin: 5px;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    /* width : 50%; */
+  }
+
+  .newTableTitle {
+    background-color: #CD5C5C;
+  }
+
+  .ongoingTableTitle {
+    background-color: #CD853F;
+  }
+
+  .completedTableTitle {
+    background-color: #2F4F4F;
+  }
+
+  /* .newAccord,
+  .ongoingAccord,
+  .completedAccord {
+    margin: 15px;
+    padding: 15px;
+  } */
+
+  .btn-link {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .containerTitle {
+    line-height: 3px;
+    margin: 20px;
+    padding: 20px;
+    font-family: 'Alfa Slab One', cursive;
+  }
+
+  #InfoText {
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 10;
+    color: grey;
+  }
+
+  @media screen and (min-width:768px) {
+
+    .newTableTitle,
+    .ongoingTableTitle,
+    .completedTableTitle {
+      height: 60px;
+    }
+
+    /* @media screen and (max-width:568px){
+        .newTableTitle,
+  .ongoingTableTitle,
+  .completedTableTitle {
+    width: 150px;
+  }
+  } */
+  }
