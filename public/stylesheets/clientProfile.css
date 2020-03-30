@@ -2,7 +2,6 @@
 
 body {
   color: black;
-  background: url("images/signup-bg.jpg") no-repeat center center fixed;
   background-size: cover;
   opacity: 0.9;
 }
@@ -18,7 +17,6 @@ body {
 .clientInfoCard {
   width: 60%;
   margin: auto;
-  /* text-align: center; */
   margin-bottom: 40px;
   height: 400px;
 }
