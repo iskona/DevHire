@@ -1,8 +1,8 @@
 # DevHire Project Management System
 
-## Developers: [Sofia](https://github.com/iskona), [Deepshikha] (https://github.com/deepshikhasingh90), [Madhavi](https://github.com/madhavic1), [Natasha](https://github.com/nadair42)
+## Developers: [Deepshikha] (https://github.com/deepshikhasingh90), [Madhavi](https://github.com/madhavic1), [Natasha](https://github.com/nadair42), [Sofia](https://github.com/iskona), 
 
-[Click here](https://iskona.github.io/DevHire/) to launch this project on GitHub Pages.
+[Click here](https://immense-brushlands-05326.herokuapp.com/) to launch this project on Heroku.
 
 ## Built with
 * HTML
