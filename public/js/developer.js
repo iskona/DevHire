@@ -1,15 +1,20 @@
 /* eslint-disable prettier/prettier */
 $(document).ready(function() {
+  var emaiId = $("#email-id");
+  var skillName = $("#skill-name");
+  var firstName = $("#first-name");
+  var lastName = $("#last-name");
+  var experienceVal = $("#experience");
   //get the user's email id to auto populate in the email field.
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.get("/api/user_data").then(function(data) {
-    $("#email-id").val(data.email);
-    $("#email-id").attr("disabled","true");
+    emaiId.val(data.email);
+    emaiId.attr("disabled","true");
   });
   var skills = [];
   function createSkillButtons() {
-    var skill = $("#skill-name")
+    var skill = skillName
       .val()
       .trim();
    
@@ -19,7 +24,7 @@ $(document).ready(function() {
         skills.push(skill);
         var skillBtn = $("<button type='button' class='skill-btn btn btn-secondary mb-2'>").text(skill);
         $("#skill-button-group").append(skillBtn);
-        $("#skill-name").val("");
+        skillName.val("");
       }
     }
   }
@@ -28,7 +33,7 @@ $(document).ready(function() {
     createSkillButtons();
   });
 
-  $("#skill-name").keypress(function (event) {
+  skillName.keypress(function (event) {
     if (event.keyCode === 13 || event.which === 13) {
       createSkillButtons();
     }
@@ -38,16 +43,23 @@ $(document).ready(function() {
   $("#saveBtn").on("click",function(event){
     event.preventDefault();
     //send a post request on route ('api/developer') with all the form data
-    var developerData = {
-      fullName : $("#first-name").val().trim()+" "+$("#last-name").val().trim(),
-      email: $("#email-id").val().trim(),
-      contact : $("#contact").val().trim(),
-      skills : skills.toString(),
-      experience : $("#experience").val().trim(),
-      portfolioLink : $("#portfolio-link").val().trim()
-    };
-    //save the above grabbed details to database developers table
-    saveToPortfolio(developerData);
+    if(firstName.val() !== "" && lastName.val() !== "" && skills.length !== 0 && experienceVal.val() !== ""){
+      var developerData = {
+        fullName : firstName.val().trim()+" "+lastName.val().trim(),
+        email: emaiId.val().trim(),
+        contact : $("#contact").val().trim(),
+        skills : skills.toString(),
+        experience : experienceVal.val().trim(),
+        portfolioLink : $("#portfolio-link").val().trim()
+      };
+      //save the above grabbed details to database developers table
+      saveToPortfolio(developerData);
+    }
+    else{
+      alert("Please enter all the mandatory fields !!");
+      return;
+    }
+
   });
   function saveToPortfolio(details){
     $.post("/api/developer", {

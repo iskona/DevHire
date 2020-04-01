@@ -1,4 +1,5 @@
-var socket = io.connect("http://localhost:8000");
+// var socket = io.connect("http://localhost:8000");
+var socket = io();
 var message = $("#message");
 var handle = $("#handle");
 var btn = $("#chat-send");

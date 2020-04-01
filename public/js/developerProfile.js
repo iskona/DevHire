@@ -1,13 +1,16 @@
 $(document).ready(function() {
+  var firstName = $("#first-name");
+  var lastName = $("#last-name");
+  var emailId = $("#email-id");
+  var contactEl = $("#contact");
+  var experienceEl = $("#experience");
+  var portfolioEl = $("#portfolio-link");
     var skills_array = [];
    // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.get("/api/user_data").then(function(data) {
     console.log(data);
-    // $("#email-id").val(data.email);
-    //use this email to get developer profile data
     fillPageData(data);
-    //auto populate the page with the data
   });
 
 function fillPageData(data) {
@@ -16,12 +19,12 @@ function fillPageData(data) {
     console.log(developerData);
     //use this data to auto populate the page
     var name = developerData.fullName.split(" ");
-    $("#first-name").val(name[0]);
-    $("#last-name").val(name[1]);
-    $("#email-id").val(developerData.email).attr("disabled","true");
-    $("#contact").val(developerData.contact);
-    $("#experience").val(developerData.experience);
-    $("#portfolio-link").val(developerData.portfolioLink);
+    firstName.val(name[0]);
+    lastName.val(name[1]);
+    emailId.val(developerData.email).attr("disabled","true");
+    contactEl.val(developerData.contact);
+    experienceEl.val(developerData.experience);
+    portfolioEl.val(developerData.portfolioLink);
     createSkillButtons(developerData);
   });
 }
@@ -80,14 +83,21 @@ $("#add-btn").on("click", function (event) {
 
 $("#updateBtn").on("click",function(event){
     event.preventDefault();
- var updatedData = {
-    fullName : $("#first-name").val().trim()+" "+$("#last-name").val().trim(),
-    email: $("#email-id").val().trim(),
-    contact : $("#contact").val().trim(),
-    skills : skills_array.toString(),
-    experience : $("#experience").val().trim(),
-    portfolioLink : $("#portfolio-link").val().trim()
-  };
-  updateProfile(updatedData);
+    if(firstName.val() !== "" && lastName.val() !== "" && skills_array.length !== 0 && experienceEl.val() !== ""){
+      var updatedData = {
+        fullName : firstName.val().trim()+" "+lastName.val().trim(),
+        email: emailId.val().trim(),
+        contact : contactEl.val().trim(),
+        skills : skills_array.toString(),
+        experience : experienceEl.val().trim(),
+        portfolioLink : portfolioEl.val().trim()
+      };
+      updateProfile(updatedData);
+    } 
+    else{
+      alert("Please enter all the mandatory fields !!");
+      return;
+    }
+
 });
 });

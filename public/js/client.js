@@ -5,7 +5,6 @@ $(document).ready(function() {
   var clientContact = $("#clientContact");
   var clientCompany = $("#clientCompany");
   var clientDesc = $("#clientDesc");
-  var clientSave = $("#clientSave");
   var signUpForm = $("form.signup-form");
   var clientAlreadyExists = false;
 
