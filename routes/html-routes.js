@@ -76,4 +76,13 @@ module.exports = function(app) {
       js: "developerProfile.js"
     });
   });
+  // route for chat app feature
+
+  app.get("/chat", isAuthenticated, function(req, res) {
+    res.render("chat", {
+      title: "DevHire Chat Feature",
+      style: "style.css",
+      js: "chat.js"
+    });
+  });
 };
